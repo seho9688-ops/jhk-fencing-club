@@ -594,6 +594,40 @@ section{padding:96px 24px;position:relative}
   content:'';display:inline-block;width:24px;height:1px;
   background:var(--gold);vertical-align:middle;margin-right:8px;
 }
+  /* ===== ABOUT SLIDESHOW ===== */
+.about-slideshow{
+  position:absolute;inset:0;
+  z-index:0;
+}
+.about-slide{
+  position:absolute;inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1.6s ease-in-out;
+}
+.about-slide.active{opacity:1}
+.about-slide-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg,rgba(10,10,10,0.2) 0%,rgba(10,10,10,0.7) 100%),
+    radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,0.4) 100%);
+  pointer-events:none;
+}
+.about-slide-dots{
+  position:absolute;bottom:16px;left:50%;
+  transform:translateX(-50%);
+  z-index:2;display:flex;gap:8px;
+}
+.about-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(201,169,97,0.3);
+  transition:background 0.4s ease, transform 0.4s ease;
+}
+.about-dot.active{
+  background:var(--gold);
+  transform:scale(1.4);
+}
 .about-text{font-family:var(--kr);font-size:15px;line-height:1.9;color:var(--text)}
 .about-text p{margin-bottom:20px}
 .about-text .lead{
@@ -1352,11 +1386,23 @@ section{padding:96px 24px;position:relative}
   <h2 class="section-title fade-in">About <span class="it">us</span></h2>
   <div class="section-kr fade-in">소 개</div>
 
-  <div class="about-img fade-in">
-    <div class="about-logo-large">
-      <img src="jhk-logo.png" alt="JHK Fencing Club Logo" onerror="this.parentElement.style.display='none'">
+ <div class="about-img fade-in">
+    <div class="about-slideshow">
+      <div class="about-slide active" style="background-image:url('about-1.jpg')"></div>
+      <div class="about-slide" style="background-image:url('about-2.jpg')"></div>
+      <div class="about-slide" style="background-image:url('about-3.jpg')"></div>
+      <div class="about-slide" style="background-image:url('about-4.jpg')"></div>
+      <div class="about-slide" style="background-image:url('about-5.jpg')"></div>
     </div>
-    <div class="about-img-tag">JHK FENCING CLUB</div>
+    <div class="about-slide-overlay"></div>
+    <div class="about-slide-dots">
+      <span class="about-dot active"></span>
+      <span class="about-dot"></span>
+      <span class="about-dot"></span>
+      <span class="about-dot"></span>
+      <span class="about-dot"></span>
+    </div>
+    <div class="about-img-tag" style="z-index:2">JHK FENCING CLUB</div>
   </div>
 
   <div class="about-text fade-in">
@@ -1984,7 +2030,20 @@ adminPw.addEventListener('keypress',e=>{if(e.key==='Enter')tryLogin();});
 document.getElementById('adminLogout').addEventListener('click',()=>{
   adminPanel.classList.remove('show');
 });
-
+// ===== ABOUT SLIDESHOW =====
+(function(){
+  var slides = document.querySelectorAll('.about-slide');
+  var dots = document.querySelectorAll('.about-dot');
+  if(slides.length < 2) return;
+  var idx = 0;
+  setInterval(function(){
+    slides[idx].classList.remove('active');
+    dots[idx].classList.remove('active');
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add('active');
+    dots[idx].classList.add('active');
+  }, 4000);
+})();
 // init
 loadInquiries();
 
