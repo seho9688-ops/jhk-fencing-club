@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="description" content="광주 펜싱클럽 · 2006 도하 아시안게임 은메달리스트 장현경 대표감독 · 초등 취미반부터 엘리트 선수반 TEAM J1까지 운영하는 광주 광산구 펜싱 전문 클럽">
+<meta name="keywords" content="광주펜싱, 광주펜싱클럽, 광산구펜싱, 장현경펜싱, JHK펜싱, TEAM J1, 펜싱클럽, 사브르, 펜싱강습, 어린이펜싱, 성인펜싱">
+<meta name="author" content="JHK FENCING CLUB">
+<title>JHK FENCING CLUB | 장현경펜싱클럽 · 광주 광산구</title>
+<link rel="icon" type="image/jpeg" href="jhk-logo.jpg">
+<link rel="apple-touch-icon" href="jhk-logo.jpg">
+<meta property="og:title" content="JHK FENCING CLUB | 장현경펜싱클럽">
+<meta property="og:description" content="2006 도하 아시안게임 은메달리스트 장현경 감독이 직접 지도하는 광주 광산구 펜싱 전문 클럽 · 초등 취미반부터 엘리트 TEAM J1까지">
+<meta property="og:image" content="jhk-logo.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsClub",
+  "name": "JHK FENCING CLUB",
+  "alternateName": "장현경펜싱클럽",
+  "description": "광주 광산구에 위치한 펜싱 전문 클럽. 2006 도하 아시안게임 은메달리스트 장현경 대표감독이 직접 지도.",
+  "sport": "Fencing",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "광주광역시 광산구",
+    "addressCountry": "KR"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "장현경",
+    "alternateName": "Jang Hyun Kyung",
+    "jobTitle": "Head Coach",
+    "award": [
+      "2006 도하 아시안게임 펜싱 은메달",
+      "2008 말레이시아 오픈 펜싱선수권대회 금메달",
+      "2006 미국 라스베가스 국제그랑프리 동메달"
+    ]
+  },
+  "foundingDate": "2023"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Italiana&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a;
+  --bg-soft:#141414;
+  --bg-card:#1a1a1a;
+  --line:#2a2a2a;
+  --text:#e8e6e0;
+  --text-dim:#9a9690;
+  --gold:#c9a961;
+  --gold-bright:#e4c87c;
+  --gold-deep:#8a7340;
+  --red-blade:#7a1a1a;
+  --serif-display:'Italiana','Cormorant Garamond',serif;
+  --serif:'Cormorant Garamond',serif;
+  --kr:'Noto Serif KR',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:hidden}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--kr);
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:0.01em;
+}
+body.intro-active{overflow:hidden;height:100vh}
+
+/* ============ CINEMATIC INTRO ============ */
+.intro{
+  position:fixed;inset:0;z-index:999;
+  background:#000;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+  opacity:1;
+  transition:opacity 1s ease;
+}
+.intro.fade-out{opacity:0;pointer-events:none}
+
+.intro-video-wrap{
+  position:absolute;inset:0;
+  overflow:hidden;
+}
+.intro-video{
+  position:absolute;top:50%;left:50%;
+  min-width:100%;min-height:100%;
+  width:auto;height:auto;
+  transform:translate(-50%,-50%) scale(1.05);
+  object-fit:cover;
+  filter:saturate(0.7) contrast(1.15) brightness(0.85);
+  animation:introZoom 5s ease-out forwards;
+  opacity:0;
+}
+.intro-video.loaded{
+  animation:introZoom 5s ease-out forwards, introFadeIn 1.2s ease forwards;
+}
+@keyframes introZoom{
+  0%{transform:translate(-50%,-50%) scale(1.15)}
+  100%{transform:translate(-50%,-50%) scale(1.0)}
+}
+@keyframes introFadeIn{
+  0%{opacity:0}
+  100%{opacity:1}
+}
+
+/* Letterbox bars */
+.letterbox{
+  position:absolute;left:0;right:0;
+  height:80px;background:#000;z-index:3;
+  transform:translateY(-100%);
+  transition:transform 0.8s cubic-bezier(0.7,0,0.3,1);
+}
+.letterbox.top{top:0}
+.letterbox.bottom{bottom:0;transform:translateY(100%)}
+.intro.bars-in .letterbox.top{transform:translateY(0)}
+.intro.bars-in .letterbox.bottom{transform:translateY(0)}
+
+/* Vignette overlay */
+.vignette{
+  position:absolute;inset:0;z-index:2;
+  background:
+    radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,0.4) 70%,rgba(0,0,0,0.8) 100%);
+  pointer-events:none;
+}
+
+/* Film grain */
+.grain{
+  position:absolute;inset:-50%;z-index:2;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity:0.35;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  animation:grainShift 0.8s steps(6) infinite;
+}
+@keyframes grainShift{
+  0%{transform:translate(0,0)}
+  20%{transform:translate(-3%,2%)}
+  40%{transform:translate(2%,-3%)}
+  60%{transform:translate(-2%,3%)}
+  80%{transform:translate(3%,1%)}
+  100%{transform:translate(0,0)}
+}
+
+/* Light leak */
+.light-leak{
+  position:absolute;top:-20%;right:-20%;
+  width:80%;height:80%;z-index:2;
+  background:radial-gradient(circle,rgba(201,169,97,0.25) 0%,transparent 60%);
+  filter:blur(40px);
+  opacity:0;
+  animation:leakFlash 5s ease-out forwards;
+  pointer-events:none;
+}
+@keyframes leakFlash{
+  0%{opacity:0}
+  30%{opacity:0.6}
+  60%{opacity:0.3}
+  100%{opacity:0.15}
+}
+
+/* Intro Title */
+.intro-title-wrap{
+  position:relative;z-index:4;
+  text-align:center;
+  padding:0 24px;
+}
+.intro-logo{
+  width:90px;height:90px;
+  margin:0 auto 28px;
+  opacity:0;
+  transform:scale(0.85);
+  animation:logoIn 1.2s 0.2s cubic-bezier(0.2,0.7,0.3,1) forwards;
+  filter:drop-shadow(0 4px 24px rgba(0,0,0,0.6)) drop-shadow(0 0 20px rgba(201,169,97,0.15));
+}
+.intro-logo img{width:100%;height:100%;object-fit:contain}
+@keyframes logoIn{
+  0%{opacity:0;transform:scale(0.85)}
+  60%{opacity:1;transform:scale(1.04)}
+  100%{opacity:1;transform:scale(1)}
+}
+.intro-presents{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;letter-spacing:0.5em;
+  color:var(--gold);
+  margin-bottom:24px;
+  opacity:0;
+  animation:titleIn 1.2s 1.2s ease forwards;
+}
+.intro-title{
+  font-family:var(--serif-display);
+  font-size:clamp(40px,12vw,72px);
+  letter-spacing:0.15em;
+  color:#fff;
+  line-height:1;
+  display:flex;justify-content:center;flex-wrap:wrap;
+  text-shadow:0 2px 30px rgba(0,0,0,0.8);
+}
+.intro-title span{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(8px);
+  animation:letterIn 0.6s ease forwards;
+}
+.intro-title .space{width:0.5em}
+.intro-sub{
+  font-family:var(--kr);font-weight:300;
+  font-size:11px;letter-spacing:0.6em;
+  color:rgba(255,255,255,0.7);
+  margin-top:20px;padding-left:0.6em;
+  opacity:0;
+  animation:titleIn 1s 3s ease forwards;
+}
+.intro-line{
+  width:0;height:1px;background:var(--gold);
+  margin:24px auto 0;
+  animation:lineGrow 1s 3.2s ease forwards;
+}
+@keyframes titleIn{to{opacity:1}}
+@keyframes letterIn{to{opacity:1;transform:translateY(0)}}
+@keyframes lineGrow{to{width:60px}}
+
+.intro-skip{
+  position:absolute;top:24px;right:24px;z-index:5;
+  background:none;border:1px solid rgba(255,255,255,0.3);
+  color:rgba(255,255,255,0.7);
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;letter-spacing:0.3em;
+  padding:8px 16px;cursor:pointer;
+  transition:all 0.3s;
+  opacity:0;animation:titleIn 0.8s 0.8s ease forwards;
+}
+.intro-skip:active{background:rgba(255,255,255,0.1);color:#fff}
+
+/* Sound toggle */
+.sound-toggle{
+  position:absolute;top:24px;left:24px;z-index:5;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:8px 14px;
+  display:flex;align-items:center;gap:8px;
+  cursor:pointer;
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;letter-spacing:0.25em;
+  opacity:0;animation:titleIn 0.8s 0.8s ease forwards,soundPulse 2s 2s infinite ease-in-out;
+}
+.sound-toggle svg{width:14px;height:14px;flex-shrink:0}
+.sound-toggle.active{
+  background:rgba(201,169,97,0.2);
+  animation:titleIn 0.8s 0.8s ease forwards;
+}
+@keyframes soundPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(201,169,97,0.4)}
+  50%{box-shadow:0 0 0 8px rgba(201,169,97,0)}
+}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:16px 20px;
+  background:rgba(10,10,10,0.85);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(201,169,97,0.12);
+  display:flex;justify-content:space-between;align-items:center;
+  transition:transform 0.4s ease;
+}
+.nav.hide{transform:translateY(-100%)}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--serif-display);
+  font-size:16px;
+  letter-spacing:0.25em;
+  color:var(--gold);
+}
+.nav-logo img{
+  width:32px;height:32px;
+  object-fit:contain;
+  filter:brightness(1.1);
+}
+.nav-logo span.bar{color:var(--gold-deep);font-weight:300;margin:0 2px}
+.nav-logo .nav-text{display:flex;flex-direction:column;line-height:1}
+.nav-logo .nav-text-en{font-size:13px;letter-spacing:0.2em;color:var(--text)}
+.nav-logo .nav-text-kr{
+  font-family:var(--kr);font-size:9px;font-weight:300;
+  color:var(--gold);letter-spacing:0.3em;margin-top:3px;
+}
+.nav-toggle{
+  width:32px;height:32px;
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;
+}
+.nav-toggle span{
+  display:block;width:22px;height:1px;background:var(--gold);
+  transition:all 0.3s ease;
+}
+.nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.menu-overlay{
+  position:fixed;inset:0;z-index:99;
+  background:linear-gradient(180deg,#0a0a0a 0%,#141414 100%);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.5s ease;
+}
+.menu-overlay.open{opacity:1;pointer-events:auto}
+.menu-overlay::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:200%;height:200%;
+  background:radial-gradient(circle at center,rgba(201,169,97,0.06) 0%,transparent 50%);
+  pointer-events:none;
+}
+.menu-overlay ul{list-style:none;text-align:center;position:relative;z-index:1}
+.menu-overlay li{margin:18px 0;opacity:0;transform:translateY(20px);transition:all 0.5s ease}
+.menu-overlay.open li{opacity:1;transform:translateY(0)}
+.menu-overlay.open li:nth-child(1){transition-delay:0.1s}
+.menu-overlay.open li:nth-child(2){transition-delay:0.16s}
+.menu-overlay.open li:nth-child(3){transition-delay:0.22s}
+.menu-overlay.open li:nth-child(4){transition-delay:0.28s}
+.menu-overlay.open li:nth-child(5){transition-delay:0.34s}
+.menu-overlay.open li:nth-child(6){transition-delay:0.4s}
+.menu-overlay.open li:nth-child(7){transition-delay:0.46s}
+.menu-overlay a{
+  font-family:var(--serif-display);
+  font-size:32px;
+  color:var(--text);
+  text-decoration:none;
+  letter-spacing:0.15em;
+  position:relative;
+  display:inline-block;
+}
+.menu-overlay a::after{
+  content:attr(data-kr);
+  display:block;font-family:var(--kr);font-size:11px;color:var(--gold);
+  letter-spacing:0.4em;margin-top:4px;font-weight:300;
+}
+
+/* ============ HERO ============ */
+.hero{
+  min-height:100vh;min-height:100svh;
+  position:relative;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:80px 24px 100px;
+  overflow:hidden;
+}
+.hero-video{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  z-index:0;
+  filter:saturate(0.65) contrast(1.1) brightness(0.55);
+}
+.hero-video-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg,rgba(10,10,10,0.4) 0%,rgba(10,10,10,0.6) 50%,rgba(10,10,10,0.95) 100%),
+    radial-gradient(ellipse at center,transparent 20%,rgba(0,0,0,0.5) 80%);
+}
+.hero-grain{
+  position:absolute;inset:0;z-index:1;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode:overlay;
+  opacity:0.6;
+  pointer-events:none;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(ellipse at 70% 20%,rgba(201,169,97,0.12) 0%,transparent 50%),
+    radial-gradient(ellipse at 20% 80%,rgba(122,26,26,0.15) 0%,transparent 50%);
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+.hero-blade{
+  position:absolute;
+  top:5%;right:-15%;
+  width:140%;height:90%;
+  pointer-events:none;
+  opacity:0.12;
+  z-index:1;
+  mix-blend-mode:screen;
+}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:520px}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--serif);font-style:italic;
+  font-size:13px;color:var(--gold);
+  letter-spacing:0.3em;text-transform:uppercase;
+  margin-bottom:32px;
+  opacity:0;animation:fadeUp 1s 0.2s forwards;
+}
+.hero-tag::before,.hero-tag::after{
+  content:'';width:32px;height:1px;background:var(--gold-deep);
+}
+.hero-title{
+  font-family:var(--serif-display);
+  font-size:clamp(48px,15vw,76px);
+  line-height:0.95;
+  letter-spacing:0.04em;
+  color:var(--text);
+  margin-bottom:8px;
+  opacity:0;animation:fadeUp 1.2s 0.4s forwards;
+}
+.hero-title .gold{color:var(--gold);font-style:italic}
+.hero-subtitle{
+  font-family:var(--kr);font-weight:300;
+  font-size:14px;letter-spacing:0.5em;
+  color:var(--text-dim);
+  margin-bottom:48px;
+  padding-left:0.5em;
+  opacity:0;animation:fadeUp 1s 0.7s forwards;
+}
+.hero-quote{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:18px;color:var(--text);
+  margin:0 auto 56px;max-width:340px;
+  line-height:1.6;
+  opacity:0;animation:fadeUp 1s 0.9s forwards;
+}
+.hero-quote::before{
+  content:'"';font-size:48px;color:var(--gold);
+  display:block;line-height:0;margin-top:16px;font-family:var(--serif);
+}
+
+/* ============ FLOATING CTA (Global) ============ */
+.floating-cta{
+  position:fixed;
+  bottom:20px;right:20px;
+  z-index:90;
+  display:flex;flex-direction:column;gap:10px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+  pointer-events:none;
+}
+.floating-cta.show{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+.floating-cta a{
+  width:52px;height:52px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  border:1.5px solid rgba(255,255,255,0.15);
+  cursor:pointer;
+  position:relative;
+  box-shadow:0 6px 20px rgba(0,0,0,0.5);
+  transition:transform 0.25s ease;
+}
+.floating-cta a:active{transform:scale(0.92)}
+.floating-cta .fab-kakao{background:#FEE500;color:#191919}
+.floating-cta .fab-naver{background:#03C75A;color:#fff}
+.floating-cta a svg{width:24px;height:24px}
+.floating-cta .fab-naver svg{width:20px;height:20px}
+
+/* Pulse on kakao button */
+.floating-cta .fab-kakao::before{
+  content:'';
+  position:absolute;inset:-2px;
+  border-radius:50%;
+  border:2px solid #FEE500;
+  opacity:0;
+  animation:fabPulse 2.4s infinite ease-out;
+}
+@keyframes fabPulse{
+  0%{transform:scale(1);opacity:0.7}
+  100%{transform:scale(1.4);opacity:0}
+}
+
+/* Tooltip label on hover/load */
+.floating-cta a::after{
+  content:attr(data-label);
+  position:absolute;
+  right:calc(100% + 10px);
+  top:50%;transform:translateY(-50%);
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(201,169,97,0.3);
+  color:var(--gold);
+  font-family:var(--kr);font-size:11px;font-weight:400;
+  letter-spacing:0.15em;
+  padding:6px 12px;
+  border-radius:20px;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.3s ease;
+}
+.floating-cta a:hover::after{opacity:1}
+
+/* On first show, briefly show kakao label as hint */
+.floating-cta.show .fab-kakao::after{
+  animation:hintLabel 4s 1s ease-out forwards;
+}
+@keyframes hintLabel{
+  0%{opacity:0;transform:translateY(-50%) translateX(8px)}
+  10%,60%{opacity:1;transform:translateY(-50%) translateX(0)}
+  100%{opacity:0;transform:translateY(-50%) translateX(-4px)}
+}
+.hero-cta-hint{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 18px;
+  background:rgba(201,169,97,0.06);
+  border:1px solid rgba(201,169,97,0.25);
+  border-radius:999px;
+  font-family:var(--kr);font-weight:300;
+  font-size:11px;color:var(--gold);
+  letter-spacing:0.2em;
+  opacity:0;animation:fadeUp 1s 1.1s forwards;
+}
+.hero-cta-hint svg{width:14px;height:14px;color:var(--gold)}
+.scroll-hint{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  font-family:var(--serif);font-style:italic;font-size:11px;
+  color:var(--gold);letter-spacing:0.3em;
+  opacity:0;animation:fadeUp 1s 1.5s forwards,bob 2s 2s infinite ease-in-out;
+  z-index:2;
+}
+.scroll-hint::after{
+  content:'';display:block;width:1px;height:32px;
+  background:linear-gradient(180deg,var(--gold),transparent);
+  margin:8px auto 0;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ============ SECTION COMMON ============ */
+section{padding:96px 24px;position:relative}
+.section-num{
+  font-family:var(--serif);font-style:italic;
+  font-size:13px;color:var(--gold);letter-spacing:0.4em;
+  margin-bottom:12px;
+}
+.section-title{
+  font-family:var(--serif-display);
+  font-size:clamp(36px,9vw,52px);
+  line-height:1;letter-spacing:0.03em;
+  margin-bottom:8px;color:var(--text);
+}
+.section-title .it{font-style:italic;color:var(--gold)}
+.section-kr{
+  font-family:var(--kr);font-weight:300;
+  font-size:13px;color:var(--text-dim);
+  letter-spacing:0.3em;margin-bottom:48px;
+}
+.divider{
+  width:32px;height:1px;background:var(--gold);
+  margin:0 auto 32px;
+}
+
+/* ============ ABOUT ============ */
+.about{background:var(--bg)}
+.about-img{
+  width:100%;aspect-ratio:4/5;
+  background:linear-gradient(135deg,#1a1a1a,#0a0a0a);
+  margin-bottom:32px;position:relative;overflow:hidden;
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+}
+.about-img::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(201,169,97,0.15) 0%,transparent 60%),
+    linear-gradient(135deg,#1a1813 0%,#0a0a0a 100%);
+}
+.about-logo-large{
+  position:relative;z-index:1;
+  width:75%;max-width:280px;
+  filter:drop-shadow(0 4px 20px rgba(201,169,97,0.2));
+}
+.about-logo-large img{width:100%;height:auto;object-fit:contain}
+.about-img-tag{
+  position:absolute;bottom:20px;left:20px;
+  font-family:var(--serif);font-style:italic;font-size:12px;
+  color:var(--gold);letter-spacing:0.3em;
+}
+.about-img-tag::before{
+  content:'';display:inline-block;width:24px;height:1px;
+  background:var(--gold);vertical-align:middle;margin-right:8px;
+}
+.about-text{font-family:var(--kr);font-size:15px;line-height:1.9;color:var(--text)}
+.about-text p{margin-bottom:20px}
+.about-text .lead{
+  font-family:var(--serif);font-style:italic;font-size:20px;
+  color:var(--gold);line-height:1.5;margin-bottom:28px;
+}
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  margin-top:40px;padding-top:32px;
+  border-top:1px solid var(--line);
+}
+.stat-num{
+  font-family:var(--serif-display);font-size:42px;
+  color:var(--gold);line-height:1;margin-bottom:6px;
+}
+.stat-label{font-size:11px;color:var(--text-dim);letter-spacing:0.25em;font-weight:400}
+
+/* ============ TEAM J1 ============ */
+.team-j1{
+  background:linear-gradient(180deg,#0a0a0a 0%,#0f0d08 50%,#0a0a0a 100%);
+  text-align:center;
+  position:relative;
+}
+.j1-badge{
+  display:inline-block;padding:6px 18px;
+  border:1px solid var(--gold);color:var(--gold);
+  font-family:var(--serif);font-style:italic;font-size:11px;
+  letter-spacing:0.4em;margin-bottom:24px;
+}
+.j1-title{
+  font-family:var(--serif-display);
+  font-size:64px;line-height:1;
+  letter-spacing:0.1em;color:var(--gold);
+  margin-bottom:8px;
+}
+.j1-sub{
+  font-family:var(--kr);font-weight:300;font-size:13px;
+  color:var(--text-dim);letter-spacing:0.4em;margin-bottom:32px;
+}
+.j1-desc{
+  font-family:var(--serif);font-style:italic;font-size:17px;
+  color:var(--text);max-width:340px;margin:0 auto 40px;line-height:1.7;
+}
+.j1-img{
+  width:100%;aspect-ratio:1/1;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(201,169,97,0.1) 0%,transparent 70%),
+    #0a0a0a;
+  border:1px solid var(--gold-deep);
+  position:relative;
+  margin-bottom:32px;
+}
+.j1-img-overlay{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+}
+.j1-img-overlay svg{width:60%;max-width:200px;opacity:0.4}
+
+.medal-list{
+  list-style:none;padding:0;margin:0;
+  border-top:1px solid var(--line);
+}
+.medal-list li{
+  padding:16px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--kr);font-size:14px;
+}
+.medal-year{
+  font-family:var(--serif);font-style:italic;color:var(--gold);
+  font-size:13px;letter-spacing:0.1em;
+}
+
+/* ============ HEAD COACH ============ */
+.coach{
+  background:linear-gradient(180deg,#0a0a0a 0%,#0d0b07 50%,#0a0a0a 100%);
+  position:relative;
+  overflow:hidden;
+}
+.coach::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold-deep),transparent);
+}
+.coach-eyebrow{
+  font-family:var(--serif);font-style:italic;
+  font-size:12px;letter-spacing:0.4em;
+  color:var(--gold);margin-bottom:12px;
+}
+.coach-photo-wrap{
+  position:relative;
+  margin:32px 0 40px;
+  padding:24px;
+}
+.coach-photo-wrap::before,
+.coach-photo-wrap::after{
+  content:'';position:absolute;
+  width:40px;height:40px;
+  border:1px solid var(--gold);
+}
+.coach-photo-wrap::before{top:0;left:0;border-right:none;border-bottom:none}
+.coach-photo-wrap::after{bottom:0;right:0;border-left:none;border-top:none}
+
+.coach-photo{
+  width:100%;aspect-ratio:3/4;
+  background:#0d0d0d;
+  position:relative;overflow:hidden;
+  border:1px solid var(--line);
+}
+.coach-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  filter:saturate(0.92) contrast(1.05);
+  transition:transform 1.2s ease;
+}
+.coach-photo:hover img{transform:scale(1.03)}
+.coach-photo-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,transparent 50%,rgba(10,10,10,0.85) 100%),
+    radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,0.3) 100%);
+  pointer-events:none;
+}
+.coach-photo-grain{
+  position:absolute;inset:0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode:overlay;
+  opacity:0.5;
+  pointer-events:none;
+}
+.coach-photo-tag{
+  position:absolute;left:20px;bottom:18px;
+  z-index:2;
+}
+.coach-photo-tag .role{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;color:var(--gold);
+  letter-spacing:0.4em;
+  margin-bottom:4px;
+}
+.coach-photo-tag .name-en{
+  font-family:var(--serif-display);
+  font-size:24px;color:#fff;
+  letter-spacing:0.15em;
+  line-height:1;margin-bottom:2px;
+}
+.coach-photo-tag .name-kr{
+  font-family:var(--kr);font-weight:300;
+  font-size:11px;color:var(--text-dim);
+  letter-spacing:0.3em;
+}
+
+.coach-info{padding:0 4px}
+.coach-name-block{
+  display:flex;align-items:baseline;gap:14px;
+  margin-bottom:6px;flex-wrap:wrap;
+}
+.coach-name{
+  font-family:var(--serif-display);
+  font-size:42px;line-height:1;
+  letter-spacing:0.05em;color:var(--text);
+}
+.coach-name-kr{
+  font-family:var(--kr);font-weight:500;
+  font-size:18px;color:var(--gold);
+  letter-spacing:0.3em;
+}
+.coach-title{
+  font-family:var(--serif);font-style:italic;
+  font-size:13px;color:var(--text-dim);
+  letter-spacing:0.3em;text-transform:uppercase;
+  margin-bottom:24px;
+}
+.coach-quote{
+  font-family:var(--serif);font-style:italic;
+  font-size:18px;color:var(--text);
+  line-height:1.6;
+  padding:20px 0 20px 20px;
+  border-left:1px solid var(--gold);
+  margin-bottom:32px;
+}
+.coach-quote::before{
+  content:'"';color:var(--gold);
+  font-size:28px;line-height:0;
+  margin-right:4px;vertical-align:-8px;
+}
+.coach-bio{
+  font-family:var(--kr);font-size:14px;
+  line-height:1.9;color:var(--text);
+  margin-bottom:28px;
+}
+.coach-credentials{
+  border-top:1px solid var(--line);
+  padding-top:24px;
+}
+.coach-credentials-title{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;letter-spacing:0.4em;
+  color:var(--gold);margin-bottom:14px;
+  text-transform:uppercase;
+}
+.coach-credentials ul{
+  list-style:none;padding:0;
+}
+.coach-credentials li{
+  font-family:var(--kr);font-size:13px;
+  color:var(--text);line-height:1.8;
+  padding:6px 0;
+  display:flex;align-items:flex-start;gap:10px;
+}
+.coach-credentials li::before{
+  content:'';display:inline-block;
+  width:4px;height:4px;background:var(--gold);
+  margin-top:10px;flex-shrink:0;
+}
+
+/* Medal showcase */
+.medals{
+  display:grid;grid-template-columns:1fr;gap:10px;
+  margin:0 0 32px;
+}
+.medal-card{
+  background:linear-gradient(135deg,rgba(201,169,97,0.06),rgba(201,169,97,0.02));
+  border:1px solid var(--gold-deep);
+  padding:18px 20px;
+  display:flex;align-items:center;gap:18px;
+  position:relative;overflow:hidden;
+}
+.medal-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:3px;height:100%;background:var(--gold);
+}
+.medal-card.gold::before{background:linear-gradient(180deg,#f4d77e,#c9a961)}
+.medal-card.silver::before{background:linear-gradient(180deg,#e8e8e8,#a8a8a8)}
+.medal-card.bronze::before{background:linear-gradient(180deg,#d49a6a,#8b5a3c)}
+
+.medal-icon{
+  width:44px;height:44px;flex-shrink:0;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif-display);
+  font-size:14px;font-weight:600;
+  letter-spacing:0.05em;
+  position:relative;
+}
+.medal-icon.gold{
+  background:radial-gradient(circle at 30% 30%,#f4d77e,#c9a961 60%,#8a7340);
+  color:#2a1d05;
+  box-shadow:0 2px 12px rgba(201,169,97,0.3),inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.medal-icon.silver{
+  background:radial-gradient(circle at 30% 30%,#f0f0f0,#c0c0c0 60%,#808080);
+  color:#1a1a1a;
+  box-shadow:0 2px 12px rgba(192,192,192,0.25),inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.medal-icon.bronze{
+  background:radial-gradient(circle at 30% 30%,#d49a6a,#a06a3c 60%,#6d4528);
+  color:#fff;
+  box-shadow:0 2px 12px rgba(160,106,60,0.3),inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+.medal-text{flex:1;min-width:0}
+.medal-year{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;color:var(--gold);
+  letter-spacing:0.25em;
+  margin-bottom:2px;display:block;
+}
+.medal-event{
+  font-family:var(--kr);font-weight:400;
+  font-size:13px;color:var(--text);
+  line-height:1.5;
+}
+.medal-rank{
+  font-family:var(--serif);font-style:italic;
+  font-weight:600;letter-spacing:0.1em;
+}
+.medal-rank.gold{color:#e4c87c}
+.medal-rank.silver{color:#d0d0d0}
+.medal-rank.bronze{color:#d49a6a}
+
+.coach-section-title{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;letter-spacing:0.4em;
+  color:var(--gold);margin:32px 0 14px;
+  text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;
+}
+.coach-section-title::after{
+  content:'';flex:1;height:1px;background:var(--line);
+}
+.career-list{list-style:none;padding:0;margin:0 0 24px}
+.career-list li{
+  font-family:var(--kr);font-size:13px;
+  color:var(--text);line-height:1.7;
+  padding:8px 0;border-bottom:1px solid var(--line);
+  display:flex;align-items:flex-start;gap:12px;
+}
+.career-list li:last-child{border-bottom:none}
+.career-prefix{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;color:var(--gold);
+  letter-spacing:0.2em;flex-shrink:0;
+  min-width:32px;padding-top:2px;
+}
+.career-prefix.now{color:var(--gold-bright)}
+.career-prefix.past{color:var(--text-dim)}
+
+/* ============ PROGRAMS ============ */
+.programs{background:var(--bg-soft)}
+.program-card{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  padding:32px 24px;margin-bottom:16px;
+  position:relative;overflow:hidden;
+  transition:all 0.4s ease;
+}
+.program-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:0;
+  background:var(--gold);transition:height 0.5s ease;
+}
+.program-card:active::before{height:100%}
+.program-num{
+  font-family:var(--serif);font-style:italic;
+  font-size:13px;color:var(--gold);letter-spacing:0.2em;
+  margin-bottom:12px;
+}
+.program-name{
+  font-family:var(--serif-display);font-size:28px;
+  letter-spacing:0.05em;color:var(--text);
+  margin-bottom:6px;line-height:1.1;
+}
+.program-kr{
+  font-family:var(--kr);font-weight:500;font-size:14px;
+  color:var(--text-dim);letter-spacing:0.15em;margin-bottom:20px;
+}
+.program-desc{
+  font-family:var(--kr);font-size:13.5px;line-height:1.8;
+  color:var(--text-dim);
+}
+.program-tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.program-tag{
+  display:inline-block;padding:4px 10px;
+  border:1px solid var(--gold-deep);color:var(--gold);
+  font-size:10px;letter-spacing:0.15em;
+  font-family:var(--kr);
+}
+
+/* ============ GALLERY ============ */
+.gallery{background:var(--bg)}
+.gallery-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+}
+.gallery-item{
+  aspect-ratio:3/4;background:var(--bg-card);
+  position:relative;overflow:hidden;
+  border:1px solid var(--line);
+}
+.gallery-item:nth-child(3n+1){aspect-ratio:3/4}
+.gallery-item:nth-child(3n+2){aspect-ratio:1/1}
+.gallery-item:nth-child(3n+3){aspect-ratio:4/5}
+.gallery-item::before{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(135deg,rgba(201,169,97,0.06),transparent 50%),
+    radial-gradient(circle at 30% 30%,rgba(122,26,26,0.15),transparent 60%),
+    #1a1a1a;
+}
+.gallery-item:nth-child(2)::before{
+  background:
+    linear-gradient(45deg,rgba(201,169,97,0.1),transparent 60%),
+    #14110a;
+}
+.gallery-item:nth-child(3)::before{
+  background:
+    radial-gradient(ellipse at 70% 30%,rgba(201,169,97,0.12),transparent 60%),
+    #1a1612;
+}
+.gallery-item:nth-child(5)::before{
+  background:
+    linear-gradient(225deg,rgba(122,26,26,0.2),transparent 50%),
+    #181818;
+}
+.gallery-tag{
+  position:absolute;bottom:10px;left:10px;
+  font-family:var(--serif);font-style:italic;font-size:10px;
+  color:var(--gold);letter-spacing:0.2em;
+}
+
+/* ============ INQUIRY BOARD ============ */
+.inquiry{background:var(--bg-soft)}
+.inquiry-tabs{
+  display:flex;border-bottom:1px solid var(--line);
+  margin-bottom:24px;
+}
+.inquiry-tab{
+  flex:1;padding:14px 0;background:none;border:none;
+  font-family:var(--kr);font-weight:400;font-size:13px;
+  color:var(--text-dim);letter-spacing:0.2em;cursor:pointer;
+  position:relative;transition:color 0.3s;
+}
+.inquiry-tab.active{color:var(--gold)}
+.inquiry-tab.active::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;
+  background:var(--gold);
+}
+.inquiry-form{display:flex;flex-direction:column;gap:14px}
+.inquiry-form.hide{display:none}
+.input-group label{
+  display:block;font-family:var(--serif);font-style:italic;
+  font-size:11px;color:var(--gold);letter-spacing:0.25em;
+  margin-bottom:8px;text-transform:uppercase;
+}
+.input-group input,
+.input-group select,
+.input-group textarea{
+  width:100%;padding:14px 14px;
+  background:var(--bg);border:1px solid var(--line);
+  color:var(--text);font-family:var(--kr);font-size:14px;
+  font-weight:300;
+  transition:border-color 0.3s;
+}
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+  outline:none;border-color:var(--gold);
+}
+.input-group textarea{resize:vertical;min-height:120px;line-height:1.6}
+.btn-submit{
+  margin-top:12px;padding:18px;
+  background:transparent;border:1px solid var(--gold);
+  color:var(--gold);font-family:var(--kr);font-weight:400;
+  font-size:14px;letter-spacing:0.3em;cursor:pointer;
+  transition:all 0.3s;
+}
+.btn-submit:active{background:var(--gold);color:var(--bg)}
+
+.inquiry-list{
+  margin-top:32px;padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.inquiry-list-title{
+  font-family:var(--serif);font-style:italic;font-size:13px;
+  color:var(--gold);letter-spacing:0.25em;margin-bottom:16px;
+}
+.inquiry-item{
+  padding:14px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--kr);font-size:13px;
+}
+.inquiry-status{
+  font-size:10px;padding:3px 8px;letter-spacing:0.15em;
+  font-family:var(--kr);
+}
+.status-wait{color:var(--text-dim);border:1px solid var(--text-dim)}
+.status-done{color:var(--gold);border:1px solid var(--gold)}
+
+/* ============ LOCATION ============ */
+.location{background:var(--bg);text-align:center}
+.location-info{
+  font-family:var(--kr);font-weight:300;font-size:14px;
+  color:var(--text);line-height:2;
+}
+.location-info strong{color:var(--gold);font-weight:500;letter-spacing:0.1em}
+.location-map{
+  width:100%;aspect-ratio:4/3;background:var(--bg-card);
+  margin-top:24px;border:1px solid var(--line);
+  position:relative;
+  background-image:
+    linear-gradient(rgba(201,169,97,0.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,169,97,0.05) 1px,transparent 1px);
+  background-size:30px 30px;
+}
+.location-pin{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:var(--serif);font-style:italic;font-size:14px;
+  color:var(--gold);text-align:center;
+}
+.location-pin::before{
+  content:'';display:block;width:14px;height:14px;
+  background:var(--gold);border-radius:50%;
+  margin:0 auto 8px;
+  box-shadow:0 0 0 6px rgba(201,169,97,0.2),0 0 0 12px rgba(201,169,97,0.1);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 6px rgba(201,169,97,0.2),0 0 0 12px rgba(201,169,97,0.1)}
+  50%{box-shadow:0 0 0 10px rgba(201,169,97,0.15),0 0 0 20px rgba(201,169,97,0.05)}
+}
+
+/* ============ SOCIAL ============ */
+.social{
+  background:linear-gradient(180deg,var(--bg) 0%,#0a0907 100%);
+  text-align:center;padding-bottom:64px;
+}
+.social-tag{
+  font-family:var(--serif);font-style:italic;font-size:14px;
+  color:var(--gold);letter-spacing:0.25em;margin-bottom:24px;
+}
+.social-grid{
+  display:flex;justify-content:center;gap:16px;
+  margin-top:24px;
+}
+.social-link{
+  width:56px;height:56px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--gold-deep);
+  color:var(--gold);text-decoration:none;
+  transition:all 0.3s;
+}
+.social-link:active{background:var(--gold);color:var(--bg);transform:scale(0.95)}
+.social-link svg{width:22px;height:22px}
+
+/* ============ FOOTER ============ */
+.footer{
+  background:#050505;
+  padding:48px 24px 32px;
+  text-align:center;
+  border-top:1px solid var(--line);
+}
+.footer-logo-img{
+  width:64px;height:64px;
+  margin:0 auto 16px;
+  filter:drop-shadow(0 0 16px rgba(201,169,97,0.15));
+}
+.footer-logo-img img{width:100%;height:100%;object-fit:contain}
+.footer-logo{
+  font-family:var(--serif-display);
+  font-size:22px;letter-spacing:0.25em;
+  color:var(--gold);margin-bottom:8px;
+}
+.footer-kr{
+  font-family:var(--kr);font-size:11px;
+  color:var(--text-dim);letter-spacing:0.3em;margin-bottom:24px;
+}
+.footer-info{
+  font-family:var(--kr);font-size:11px;
+  color:var(--text-dim);line-height:1.9;margin-bottom:24px;
+}
+.footer-line{
+  width:24px;height:1px;background:var(--gold-deep);
+  margin:24px auto;
+}
+.footer-copy{
+  font-family:var(--serif);font-style:italic;
+  font-size:10px;color:var(--text-dim);letter-spacing:0.2em;
+}
+.admin-link{
+  display:inline-block;margin-top:16px;
+  font-family:var(--serif);font-style:italic;
+  font-size:9px;color:#3a3a3a;letter-spacing:0.3em;
+  text-decoration:none;cursor:pointer;
+  padding:4px 8px;
+}
+.admin-link:active{color:var(--gold-deep)}
+
+/* ============ ADMIN MODAL ============ */
+.modal{
+  position:fixed;inset:0;z-index:200;
+  background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);
+  display:none;align-items:center;justify-content:center;
+  padding:24px;
+}
+.modal.show{display:flex}
+.modal-box{
+  background:var(--bg-card);border:1px solid var(--gold-deep);
+  padding:32px 24px;width:100%;max-width:340px;
+  position:relative;
+}
+.modal-close{
+  position:absolute;top:12px;right:12px;
+  width:28px;height:28px;background:none;border:none;color:var(--text-dim);
+  font-size:20px;cursor:pointer;
+}
+.modal-title{
+  font-family:var(--serif-display);font-size:24px;
+  color:var(--gold);letter-spacing:0.15em;
+  text-align:center;margin-bottom:6px;
+}
+.modal-sub{
+  font-family:var(--kr);font-size:11px;
+  color:var(--text-dim);letter-spacing:0.25em;
+  text-align:center;margin-bottom:24px;
+}
+.modal input{
+  width:100%;padding:14px;background:var(--bg);
+  border:1px solid var(--line);color:var(--text);
+  font-family:var(--kr);font-size:14px;margin-bottom:12px;
+}
+.modal input:focus{outline:none;border-color:var(--gold)}
+.modal-btn{
+  width:100%;padding:14px;
+  background:transparent;border:1px solid var(--gold);
+  color:var(--gold);font-family:var(--kr);
+  font-size:13px;letter-spacing:0.25em;cursor:pointer;
+}
+.modal-error{
+  font-family:var(--kr);font-size:11px;color:#d97070;
+  text-align:center;margin-top:8px;min-height:14px;
+}
+
+/* admin panel */
+.admin-panel{
+  position:fixed;inset:0;z-index:201;background:var(--bg);
+  display:none;flex-direction:column;
+  overflow-y:auto;
+}
+.admin-panel.show{display:flex}
+.admin-header{
+  padding:20px 24px;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;background:var(--bg);z-index:1;
+}
+.admin-header h2{
+  font-family:var(--serif-display);font-size:20px;
+  color:var(--gold);letter-spacing:0.15em;
+}
+.admin-logout{
+  background:none;border:1px solid var(--line);
+  color:var(--text-dim);padding:6px 14px;
+  font-family:var(--kr);font-size:11px;letter-spacing:0.2em;cursor:pointer;
+}
+.admin-content{padding:24px;flex:1}
+.admin-content h3{
+  font-family:var(--serif);font-style:italic;font-size:14px;
+  color:var(--gold);letter-spacing:0.25em;margin-bottom:16px;
+  padding-bottom:10px;border-bottom:1px solid var(--line);
+}
+.admin-inquiry{
+  background:var(--bg-card);border:1px solid var(--line);
+  padding:16px;margin-bottom:12px;
+}
+.admin-inquiry-head{
+  display:flex;justify-content:space-between;
+  font-size:11px;color:var(--text-dim);
+  margin-bottom:8px;font-family:var(--kr);
+}
+.admin-inquiry-name{font-family:var(--kr);font-weight:500;color:var(--gold);font-size:13px}
+.admin-inquiry-body{
+  font-family:var(--kr);font-size:13px;color:var(--text);
+  line-height:1.7;margin-top:6px;
+}
+
+/* utility */
+.fade-in{opacity:0;transform:translateY(30px);transition:all 0.8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(min-width:640px){
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body class="intro-active">
+
+<!-- ============ CINEMATIC INTRO ============ -->
+<div class="intro" id="intro">
+  <button class="sound-toggle" id="soundToggle" aria-label="sound">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" id="soundIcon">
+      <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+    <span id="soundLabel">SOUND ON</span>
+  </button>
+  <button class="intro-skip" id="introSkip">SKIP</button>
+
+  <div class="intro-video-wrap">
+    <video class="intro-video" id="introVideo" muted playsinline preload="auto" poster="intro-poster.jpg">
+      <!-- 형님이 펜싱 영상 파일을 같은 폴더에 'intro.mp4'로 올려두시면 자동 재생됩니다 -->
+      <source src="intro.mp4" type="video/mp4">
+      <source src="intro.webm" type="video/webm">
+    </video>
+    <div class="vignette"></div>
+    <div class="light-leak"></div>
+    <div class="grain"></div>
+    <div class="letterbox top"></div>
+    <div class="letterbox bottom"></div>
+  </div>
+
+  <div class="intro-title-wrap">
+    <div class="intro-logo">
+      <img src="jhk-logo.jpg" alt="JHK Fencing Club" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="intro-presents">— A FENCING STORY —</div>
+    <h1 class="intro-title" id="introTitle"></h1>
+    <div class="intro-line"></div>
+    <div class="intro-sub">장 현 경 펜 싱 클 럽</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <img src="jhk-logo.jpg" alt="JHK Fencing Club" onerror="this.style.display='none'">
+    <div class="nav-text">
+      <span class="nav-text-en">JHK FENCING</span>
+      <span class="nav-text-kr">장 현 경 펜 싱 클 럽</span>
+    </div>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <ul>
+    <li><a href="#about" data-kr="소개">About</a></li>
+    <li><a href="#coach" data-kr="대표감독">Head Coach</a></li>
+    <li><a href="#team-j1" data-kr="엘리트팀">Team J1</a></li>
+    <li><a href="#programs" data-kr="프로그램">Programs</a></li>
+    <li><a href="#gallery" data-kr="갤러리">Gallery</a></li>
+    <li><a href="#inquiry" data-kr="문의">Inquiry</a></li>
+    <li><a href="#location" data-kr="오시는길">Location</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <video class="hero-video" id="heroVideo" muted loop playsinline preload="auto" poster="intro-poster.jpg">
+    <!-- 같은 폴더에 'hero-bg.mp4'로 펜싱 영상 올려두시면 배경 루프 재생 -->
+    <source src="hero-bg.mp4" type="video/mp4">
+    <source src="intro.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-bg"></div>
+  <svg class="hero-blade" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="bladeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#c9a961;stop-opacity:0"/>
+        <stop offset="50%" style="stop-color:#c9a961;stop-opacity:1"/>
+        <stop offset="100%" style="stop-color:#c9a961;stop-opacity:0"/>
+      </linearGradient>
+    </defs>
+    <line x1="50" y1="550" x2="350" y2="50" stroke="url(#bladeGrad)" stroke-width="1"/>
+    <circle cx="60" cy="540" r="12" fill="none" stroke="#c9a961" stroke-width="1"/>
+    <circle cx="60" cy="540" r="6" fill="#c9a961" opacity="0.5"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="hero-tag">Est. 2023 · Gwangju</div>
+    <h1 class="hero-title">JHK<br><span class="gold">Fencing</span></h1>
+    <div class="hero-subtitle">장 현 경 펜 싱 클 럽</div>
+    <p class="hero-quote">검의 길 위에서<br>오늘의 한 걸음이<br>내일의 챔피언을 만든다</p>
+    <div class="hero-cta-hint">
+      <span>화면 우측 하단에서 문의해주세요</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-num fade-in">— 01 —</div>
+  <h2 class="section-title fade-in">About <span class="it">us</span></h2>
+  <div class="section-kr fade-in">소 개</div>
+
+  <div class="about-img fade-in">
+    <div class="about-logo-large">
+      <img src="jhk-logo.jpg" alt="JHK Fencing Club Logo" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="about-img-tag">JHK FENCING CLUB</div>
+  </div>
+
+  <div class="about-text fade-in">
+    <p class="lead">"펜싱은 단순한 운동이 아닙니다.<br>예의와 집중, 그리고 자기와의 싸움입니다."</p>
+    <p>장현경펜싱클럽은 2023년 광주에 문을 연 이래, 초등학생부터 성인까지 진정한 펜싱의 매력을 전하고 있습니다. 정확한 자세와 기본기, 그리고 무엇보다 펜싱이 지닌 품격을 가르치는 것이 저희의 철학입니다.</p>
+    <p>풍부한 현장 경험을 갖춘 대표감독의 체계적인 커리큘럼, 그리고 엘리트 선수반 <strong style="color:var(--gold)">TEAM J1</strong>까지 — 취미부터 전국 무대를 향한 도전까지 모두 함께합니다.</p>
+
+    <div class="about-stats">
+      <div>
+        <div class="stat-num">2006<span style="font-size:14px;color:var(--text-dim)"></span></div>
+        <div class="stat-label">DOHA · SILVER MEDAL</div>
+      </div>
+      <div>
+        <div class="stat-num">2.5<span style="font-size:18px;color:var(--text-dim)">y</span></div>
+        <div class="stat-label">YEARS OF HONOR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEAD COACH -->
+<section class="coach" id="coach">
+  <div class="section-num fade-in">— 02 —</div>
+  <div class="coach-eyebrow fade-in">HEAD COACH</div>
+  <h2 class="section-title fade-in"><span class="it">Jang</span> Hyun Kyung</h2>
+  <div class="section-kr fade-in">대 표 감 독</div>
+
+  <div class="coach-photo-wrap fade-in">
+    <div class="coach-photo">
+      <img src="coach-jhk.jpg" alt="장현경 대표감독" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1610,#0a0a0a)'">
+      <div class="coach-photo-overlay"></div>
+      <div class="coach-photo-grain"></div>
+      <div class="coach-photo-tag">
+        <div class="role">— HEAD COACH</div>
+        <div class="name-en">JANG HYUN KYUNG</div>
+        <div class="name-kr">장 현 경</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="coach-info fade-in">
+    <div class="coach-name-block">
+      <h3 class="coach-name">Jang Hyun Kyung</h3>
+      <span class="coach-name-kr">장현경</span>
+    </div>
+    <div class="coach-title">Head Coach · Sabre · 대표감독 / 사브르</div>
+
+    <div class="coach-quote">
+      펜싱은 칼이 아니라 마음으로 하는 운동입니다.
+      한 번의 정확한 자세가 백 번의 화려함보다 강합니다.
+    </div>
+
+    <p class="coach-bio">
+      <strong style="color:var(--gold);font-weight:500">2006년 도하 아시안게임 펜싱 국가대표·은메달리스트</strong>
+      출신의 장현경 대표감독은, 현역 시절의 풍부한 국제대회 경험을
+      바탕으로 광주 지역 펜싱의 새로운 기준을 만들어가고 있습니다.
+      청소년 대표 전담지도자, 전남도청 펜싱팀, 풍암중 지도자를
+      거쳐 현재는 JHK FENCING CLUB과 엘리트 선수반 TEAM J1을
+      직접 이끌며, 초등 취미반부터 전국 무대를 꿈꾸는 선수까지 함께합니다.
+    </p>
+
+    <div class="coach-section-title">— Awards · 수상 내역</div>
+    <div class="medals">
+      <div class="medal-card silver">
+        <div class="medal-icon silver">2nd</div>
+        <div class="medal-text">
+          <span class="medal-year">2006</span>
+          <div class="medal-event">도하 아시안게임 <span class="medal-rank silver">은메달</span></div>
+        </div>
+      </div>
+      <div class="medal-card gold">
+        <div class="medal-icon gold">1st</div>
+        <div class="medal-text">
+          <span class="medal-year">2008</span>
+          <div class="medal-event">말레이시아 오픈 펜싱선수권대회 <span class="medal-rank gold">금메달</span></div>
+        </div>
+      </div>
+      <div class="medal-card bronze">
+        <div class="medal-icon bronze">3rd</div>
+        <div class="medal-text">
+          <span class="medal-year">2006</span>
+          <div class="medal-event">미국 라스베가스 국제그랑프리 펜싱선수권대회 <span class="medal-rank bronze">동메달</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coach-section-title">— Current · 현재 직책</div>
+    <ul class="career-list">
+      <li>
+        <span class="career-prefix now">現</span>
+        <span>JHK FENCING CLUB · TEAM J1 대표 / 감독</span>
+      </li>
+      <li>
+        <span class="career-prefix now">現</span>
+        <span>광주 펜싱협회 이사</span>
+      </li>
+      <li>
+        <span class="career-prefix now">現</span>
+        <span>한국 중·고 펜싱연맹 총무위원</span>
+      </li>
+    </ul>
+
+    <div class="coach-section-title">— Career · 주요 경력</div>
+    <ul class="career-list">
+      <li>
+        <span class="career-prefix past">前</span>
+        <span>2006 도하 아시안게임 펜싱 국가대표</span>
+      </li>
+      <li>
+        <span class="career-prefix past">前</span>
+        <span>청소년 대표 전담지도자</span>
+      </li>
+      <li>
+        <span class="career-prefix past">前</span>
+        <span>전남도청 펜싱팀</span>
+      </li>
+      <li>
+        <span class="career-prefix past">前</span>
+        <span>광주 풍암중학교 펜싱 지도자</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEAM J1 -->
+<section class="team-j1" id="team-j1">
+  <div class="section-num fade-in">— 03 —</div>
+  <div class="j1-badge fade-in">ELITE TEAM</div>
+  <h2 class="j1-title fade-in">TEAM J1</h2>
+  <div class="j1-sub fade-in">엘 리 트 선 수 반</div>
+  <p class="j1-desc fade-in">"승리는 우연이 아니라,<br>준비된 자에게 주어진다."</p>
+
+  <div class="j1-img fade-in">
+    <div class="j1-img-overlay">
+      <svg viewBox="0 0 200 200" fill="none">
+        <defs>
+          <linearGradient id="j1grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#c9a961"/>
+            <stop offset="100%" stop-color="#8a7340"/>
+          </linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="80" stroke="url(#j1grad)" stroke-width="1" fill="none"/>
+        <circle cx="100" cy="100" r="60" stroke="url(#j1grad)" stroke-width="0.5" fill="none"/>
+        <text x="100" y="115" text-anchor="middle" font-family="Italiana,serif" font-size="56" fill="url(#j1grad)" letter-spacing="4">J1</text>
+        <text x="100" y="155" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic" font-size="11" fill="#c9a961" letter-spacing="3">SINCE 2023</text>
+      </svg>
+    </div>
+  </div>
+
+  <ul class="medal-list fade-in" style="text-align:left;max-width:520px;margin:0 auto">
+    <li>
+      <span>중학교 남자부 사브르 단체 우승</span>
+      <span class="medal-year">2024</span>
+    </li>
+    <li>
+      <span>전국 대회 다수 입상</span>
+      <span class="medal-year">2023–24</span>
+    </li>
+    <li>
+      <span>광주광역시 대표 선수 다수 배출</span>
+      <span class="medal-year">현재</span>
+    </li>
+  </ul>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="section-num fade-in">— 04 —</div>
+  <h2 class="section-title fade-in"><span class="it">Programs</span></h2>
+  <div class="section-kr fade-in">프 로 그 램</div>
+
+  <div class="program-card fade-in">
+    <div class="program-num">01 / Beginner</div>
+    <h3 class="program-name">Elementary</h3>
+    <div class="program-kr">초등 취미반</div>
+    <p class="program-desc">놀이로 시작하여 정확한 자세까지. 어린 검객들에게 펜싱의 기본 예절과 운동 능력을 자연스럽게 길러줍니다.</p>
+    <div class="program-tags">
+      <span class="program-tag">기초체력</span>
+      <span class="program-tag">예의범절</span>
+      <span class="program-tag">집중력</span>
+    </div>
+  </div>
+
+  <div class="program-card fade-in">
+    <div class="program-num">02 / Intermediate</div>
+    <h3 class="program-name">Middle &amp; High</h3>
+    <div class="program-kr">중·고등부</div>
+    <p class="program-desc">실전 기술과 체계적 트레이닝. 학업과 운동을 병행하며 본격적인 선수의 길을 준비합니다.</p>
+    <div class="program-tags">
+      <span class="program-tag">실전훈련</span>
+      <span class="program-tag">대회출전</span>
+      <span class="program-tag">전술분석</span>
+    </div>
+  </div>
+
+  <div class="program-card fade-in">
+    <div class="program-num">03 / Adult</div>
+    <h3 class="program-name">Adult Class</h3>
+    <div class="program-kr">성인반</div>
+    <p class="program-desc">바쁜 일상 속 품격 있는 운동. 체형 교정부터 스트레스 해소까지, 어른을 위한 완성도 높은 펜싱.</p>
+    <div class="program-tags">
+      <span class="program-tag">바디라인</span>
+      <span class="program-tag">스트레스해소</span>
+      <span class="program-tag">사교</span>
+    </div>
+  </div>
+
+  <div class="program-card fade-in" style="border-color:var(--gold-deep);background:linear-gradient(135deg,#1a1610,#1a1a1a)">
+    <div class="program-num" style="color:var(--gold-bright)">04 / Elite</div>
+    <h3 class="program-name" style="color:var(--gold)">TEAM J1</h3>
+    <div class="program-kr">엘리트 선수반</div>
+    <p class="program-desc">선발제로 운영되는 정예 선수반. 전국 무대를 향한 강도 높은 훈련과 1:1 멘토링이 제공됩니다.</p>
+    <div class="program-tags">
+      <span class="program-tag">선발제</span>
+      <span class="program-tag">전국대회</span>
+      <span class="program-tag">1:1코칭</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="section-num fade-in">— 05 —</div>
+  <h2 class="section-title fade-in"><span class="it">Gallery</span></h2>
+  <div class="section-kr fade-in">갤 러 리</div>
+
+  <div class="gallery-grid fade-in">
+    <div class="gallery-item"><span class="gallery-tag">— Training</span></div>
+    <div class="gallery-item"><span class="gallery-tag">— Match</span></div>
+    <div class="gallery-item"><span class="gallery-tag">— Class</span></div>
+    <div class="gallery-item"><span class="gallery-tag">— Team J1</span></div>
+    <div class="gallery-item"><span class="gallery-tag">— Victory</span></div>
+    <div class="gallery-item"><span class="gallery-tag">— En Garde</span></div>
+  </div>
+  <p style="text-align:center;margin-top:24px;font-family:var(--serif);font-style:italic;font-size:12px;color:var(--text-dim);letter-spacing:0.2em">사진은 추후 실제 이미지로 교체 가능합니다</p>
+</section>
+
+<!-- INQUIRY -->
+<section class="inquiry" id="inquiry">
+  <div class="section-num fade-in">— 06 —</div>
+  <h2 class="section-title fade-in"><span class="it">Inquiry</span></h2>
+  <div class="section-kr fade-in">문 의 하 기</div>
+
+  <div class="fade-in">
+    <div class="inquiry-tabs">
+      <button class="inquiry-tab active" data-tab="form">문의 작성</button>
+      <button class="inquiry-tab" data-tab="list">문의 내역</button>
+    </div>
+
+    <form class="inquiry-form" id="inquiryForm">
+      <div class="input-group">
+        <label>Name · 성함</label>
+        <input type="text" name="name" required placeholder="홍길동">
+      </div>
+      <div class="input-group">
+        <label>Contact · 연락처</label>
+        <input type="tel" name="phone" required placeholder="010-0000-0000">
+      </div>
+      <div class="input-group">
+        <label>Program · 관심 프로그램</label>
+        <select name="program">
+          <option>초등 취미반</option>
+          <option>중·고등부</option>
+          <option>성인반</option>
+          <option>TEAM J1 엘리트</option>
+          <option>기타 / 무관</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Message · 문의 내용</label>
+        <textarea name="message" required placeholder="궁금한 점을 자유롭게 적어주세요."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">SEND INQUIRY</button>
+    </form>
+
+    <div class="inquiry-form hide" id="inquiryListView">
+      <div class="inquiry-list-title">— Recent Inquiries</div>
+      <div id="inquiryListItems">
+        <div class="inquiry-item">
+          <span>김** · 초등 취미반</span>
+          <span class="inquiry-status status-done">답변완료</span>
+        </div>
+        <div class="inquiry-item">
+          <span>박** · TEAM J1</span>
+          <span class="inquiry-status status-done">답변완료</span>
+        </div>
+        <div class="inquiry-item">
+          <span>이** · 성인반</span>
+          <span class="inquiry-status status-wait">대기중</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="section-num fade-in">— 07 —</div>
+  <h2 class="section-title fade-in"><span class="it">Location</span></h2>
+  <div class="section-kr fade-in">오 시 는 길</div>
+
+  <div class="location-info fade-in">
+    <strong>광주광역시 광산구</strong><br>
+    JHK FENCING CLUB<br>
+    <span style="color:var(--text-dim);font-size:13px">상세 주소는 문의 시 안내</span><br><br>
+    <strong>OPEN</strong> 평일 14:00 — 22:00<br>
+    토요일 10:00 — 18:00 / 일요일 휴무
+  </div>
+  <div class="location-map fade-in">
+    <div class="location-pin">
+      JHK FENCING<br>
+      <span style="font-size:10px;color:var(--text-dim);letter-spacing:0.2em">광 주 · 광 산 구</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social">
+  <div class="divider"></div>
+  <div class="social-tag">— Follow our journey —</div>
+  <div class="social-grid">
+    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+      </svg>
+    </a>
+    <a href="https://youtube.com" target="_blank" class="social-link" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8 1.6.4 7.8.4 7.8.4s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5 3-5 3z"/>
+      </svg>
+    </a>
+    <a href="https://tiktok.com" target="_blank" class="social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.7a8.16 8.16 0 0 0 4.77 1.52V6.83a4.85 4.85 0 0 1-1.84-.14z"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo-img">
+    <img src="jhk-logo.jpg" alt="JHK Fencing Club" onerror="this.parentElement.style.display='none'">
+  </div>
+  <div class="footer-logo">JHK FENCING</div>
+  <div class="footer-kr">장 현 경 펜 싱 클 럽</div>
+  <div class="footer-info">
+    광주광역시 광산구<br>
+    JHK FENCING CLUB · TEAM J1<br>
+    Head Coach · 장 현 경<br>
+    문의 · KakaoTalk / NaverTalkTalk
+  </div>
+  <div class="footer-line"></div>
+  <div class="footer-copy">© 2026 JHK FENCING CLUB · Honor &amp; Discipline</div>
+  <a class="admin-link" id="adminLink">· admin ·</a>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+  <a href="https://pf.kakao.com/" target="_blank" class="fab-kakao" data-label="카카오톡 문의" aria-label="카카오톡 문의">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 3C6.48 3 2 6.58 2 11c0 2.85 1.84 5.36 4.62 6.79l-1.18 4.31c-.1.36.31.66.62.45L11.16 19c.28.02.56.04.84.04 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/>
+    </svg>
+  </a>
+  <a href="https://talk.naver.com/" target="_blank" class="fab-naver" data-label="네이버톡톡 문의" aria-label="네이버톡톡 문의">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16.273 12.845L7.376 0H0v24h7.726V11.156L16.624 24H24V0h-7.727z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ADMIN MODAL -->
+<div class="modal" id="adminModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-title">ADMIN</div>
+    <div class="modal-sub">관 리 자 인 증</div>
+    <input type="password" id="adminPw" placeholder="비밀번호" autocomplete="off">
+    <button class="modal-btn" id="adminLogin">LOGIN</button>
+    <div class="modal-error" id="adminError"></div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-header">
+    <h2>ADMIN</h2>
+    <button class="admin-logout" id="adminLogout">LOGOUT</button>
+  </div>
+  <div class="admin-content">
+    <h3>— 문의 내역 관리</h3>
+    <div id="adminInquiryList"></div>
+  </div>
+</div>
+
+<script>
+// ===== CINEMATIC INTRO =====
+const intro = document.getElementById('intro');
+const introVideo = document.getElementById('introVideo');
+const introTitle = document.getElementById('introTitle');
+const introSkip = document.getElementById('introSkip');
+const heroVideo = document.getElementById('heroVideo');
+const soundToggle = document.getElementById('soundToggle');
+const soundIcon = document.getElementById('soundIcon');
+
+// Build title letter-by-letter for staggered animation
+const titleText = 'JHK FENCING';
+introTitle.innerHTML = titleText.split('').map((ch,i)=>{
+  if(ch===' ') return '<span class="space"></span>';
+  return `<span style="animation-delay:${2.0 + i*0.07}s">${ch}</span>`;
+}).join('');
+
+// Letterbox bars slide in immediately
+requestAnimationFrame(()=>{
+  setTimeout(()=>intro.classList.add('bars-in'), 100);
+});
+
+// Mark video as loaded when ready (fade in)
+introVideo.addEventListener('loadeddata',()=>{
+  introVideo.classList.add('loaded');
+});
+// Fallback: if video fails or takes too long, still show intro with poster bg
+introVideo.addEventListener('error',()=>{
+  introVideo.classList.add('loaded');
+  introVideo.style.background = 'linear-gradient(135deg,#1a1610,#0a0a0a)';
+});
+// Try to play
+introVideo.play().catch(()=>{ /* autoplay blocked, that's fine — visuals still work */ });
+
+// Sound toggle
+let soundOn = false;
+soundToggle.addEventListener('click',()=>{
+  soundOn = !soundOn;
+  introVideo.muted = !soundOn;
+  const soundLabel = document.getElementById('soundLabel');
+  if(soundOn){
+    soundIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>';
+    if(soundLabel) soundLabel.textContent = 'SOUND OFF';
+    soundToggle.classList.add('active');
+    // try to play in case it was paused
+    introVideo.play().catch(()=>{});
+  } else {
+    soundIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+    if(soundLabel) soundLabel.textContent = 'SOUND ON';
+    soundToggle.classList.remove('active');
+  }
+});
+
+// End intro
+function endIntro(){
+  intro.classList.add('fade-out');
+  document.body.classList.remove('intro-active');
+  // play hero video after intro ends
+  if(heroVideo){
+    heroVideo.play().catch(()=>{});
+  }
+  // Show floating CTA
+  setTimeout(()=>{
+    const fab = document.getElementById('floatingCta');
+    if(fab) fab.classList.add('show');
+  }, 600);
+  setTimeout(()=>{
+    intro.style.display='none';
+  }, 1100);
+}
+
+// Auto end after intro duration (4.17s video → 4.5s total)
+const introTimer = setTimeout(endIntro, 4500);
+
+// Skip
+introSkip.addEventListener('click',()=>{
+  clearTimeout(introTimer);
+  endIntro();
+});
+
+// ===== NAV =====
+const navToggle = document.getElementById('navToggle');
+const menuOverlay = document.getElementById('menuOverlay');
+navToggle.addEventListener('click',()=>{
+  navToggle.classList.toggle('open');
+  menuOverlay.classList.toggle('open');
+  document.body.style.overflow = menuOverlay.classList.contains('open')?'hidden':'';
+});
+document.querySelectorAll('.menu-overlay a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    navToggle.classList.remove('open');
+    menuOverlay.classList.remove('open');
+    document.body.style.overflow='';
+  });
+});
+
+// nav hide on scroll down
+let lastScroll=0;
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  const cur=window.scrollY;
+  if(cur>100 && cur>lastScroll) nav.classList.add('hide');
+  else nav.classList.remove('hide');
+  lastScroll=cur;
+});
+
+// ===== Fade-in Observer =====
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+  });
+},{threshold:0.15});
+document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+// ===== Inquiry tabs =====
+document.querySelectorAll('.inquiry-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.inquiry-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const target=tab.dataset.tab;
+    document.getElementById('inquiryForm').classList.toggle('hide',target!=='form');
+    document.getElementById('inquiryListView').classList.toggle('hide',target!=='list');
+  });
+});
+
+// ===== Inquiry submit (in-memory, persists via window.storage if available) =====
+let inquiries = [];
+async function loadInquiries(){
+  try{
+    if(window.storage){
+      const r = await window.storage.get('inquiries',true);
+      if(r) inquiries = JSON.parse(r.value);
+    }
+  }catch(e){}
+  renderInquiryList();
+}
+async function saveInquiries(){
+  try{
+    if(window.storage){
+      await window.storage.set('inquiries', JSON.stringify(inquiries), true);
+    }
+  }catch(e){}
+}
+function renderInquiryList(){
+  const listEl=document.getElementById('inquiryListItems');
+  const adminEl=document.getElementById('adminInquiryList');
+  if(inquiries.length===0){
+    if(listEl) listEl.innerHTML = listEl.innerHTML; // keep sample
+  } else {
+    if(listEl){
+      listEl.innerHTML = inquiries.slice().reverse().slice(0,10).map(i=>`
+        <div class="inquiry-item">
+          <span>${maskName(i.name)} · ${i.program}</span>
+          <span class="inquiry-status ${i.answered?'status-done':'status-wait'}">${i.answered?'답변완료':'대기중'}</span>
+        </div>
+      `).join('');
+    }
+  }
+  if(adminEl){
+    if(inquiries.length===0){
+      adminEl.innerHTML='<p style="color:var(--text-dim);font-size:13px;font-family:var(--kr)">접수된 문의가 없습니다.</p>';
+    } else {
+      adminEl.innerHTML = inquiries.slice().reverse().map((i,idx)=>`
+        <div class="admin-inquiry">
+          <div class="admin-inquiry-head">
+            <span class="admin-inquiry-name">${i.name}</span>
+            <span>${new Date(i.date).toLocaleString('ko-KR')}</span>
+          </div>
+          <div style="font-size:11px;color:var(--text-dim);font-family:var(--kr)">${i.phone} · ${i.program}</div>
+          <div class="admin-inquiry-body">${i.message.replace(/</g,'&lt;')}</div>
+        </div>
+      `).join('');
+    }
+  }
+}
+function maskName(n){
+  if(!n) return '익명';
+  if(n.length<=1) return n;
+  return n[0]+'*'.repeat(n.length-1);
+}
+
+document.getElementById('inquiryForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  const inq={
+    name:fd.get('name'),
+    phone:fd.get('phone'),
+    program:fd.get('program'),
+    message:fd.get('message'),
+    date:Date.now(),
+    answered:false
+  };
+  inquiries.push(inq);
+  await saveInquiries();
+  renderInquiryList();
+  e.target.reset();
+  alert('문의가 접수되었습니다. 빠르게 답변드리겠습니다.');
+});
+
+// ===== ADMIN =====
+const ADMIN_PW='jhk2026'; // 형님이 쉽게 바꾸실 수 있게 상단에 위치
+const adminLink=document.getElementById('adminLink');
+const adminModal=document.getElementById('adminModal');
+const adminPanel=document.getElementById('adminPanel');
+const adminPw=document.getElementById('adminPw');
+const adminError=document.getElementById('adminError');
+
+adminLink.addEventListener('click',()=>{
+  adminModal.classList.add('show');
+  setTimeout(()=>adminPw.focus(),100);
+});
+document.getElementById('modalClose').addEventListener('click',()=>{
+  adminModal.classList.remove('show');
+  adminPw.value='';adminError.textContent='';
+});
+function tryLogin(){
+  if(adminPw.value===ADMIN_PW){
+    adminModal.classList.remove('show');
+    adminPanel.classList.add('show');
+    adminPw.value='';adminError.textContent='';
+    renderInquiryList();
+  } else {
+    adminError.textContent='비밀번호가 일치하지 않습니다.';
+    adminPw.value='';
+  }
+}
+document.getElementById('adminLogin').addEventListener('click',tryLogin);
+adminPw.addEventListener('keypress',e=>{if(e.key==='Enter')tryLogin();});
+document.getElementById('adminLogout').addEventListener('click',()=>{
+  adminPanel.classList.remove('show');
+});
+
+// init
+loadInquiries();
+
+// Hide floating CTA when inquiry section is visible (avoid redundancy)
+const inquirySection = document.getElementById('inquiry');
+const floatingCta = document.getElementById('floatingCta');
+if(inquirySection && floatingCta){
+  const fabObserver = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        floatingCta.style.opacity='0';
+        floatingCta.style.pointerEvents='none';
+      } else if(floatingCta.classList.contains('show')){
+        floatingCta.style.opacity='';
+        floatingCta.style.pointerEvents='';
+      }
+    });
+  },{threshold:0.3});
+  fabObserver.observe(inquirySection);
+}
+</script>
+</body>
+</html>
