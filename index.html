@@ -1640,11 +1640,11 @@ section{padding:96px 24px;position:relative}
 
     <div class="about-stats">
       <div>
-        <div class="stat-num">2006<span style="font-size:14px;color:var(--text-dim)"></span></div>
+       <div class="stat-num"><span class="count-up" data-target="2006">0</span><span style="font-size:14px;color:var(--text-dim)"></span></div>
         <div class="stat-label">DOHA · SILVER MEDAL</div>
       </div>
       <div>
-        <div class="stat-num">34<span style="font-size:18px;color:var(--text-dim)">회</span></div>
+       <div class="stat-num"><span class="count-up" data-target="34">0</span><span style="font-size:18px;color:var(--text-dim)">회</span></div>
         <div class="stat-label">CHAMPIONSHIPS WON</div>
       </div>
     </div>
@@ -2368,6 +2368,47 @@ document.getElementById('adminLogout').addEventListener('click',()=>{
 })();
 // init
 loadInquiries();
+  // ===== COUNT UP ANIMATION =====
+(function(){
+  var counters = document.querySelectorAll('.count-up');
+  if(counters.length === 0) return;
+  
+  function animateCount(el){
+    var target = parseInt(el.dataset.target, 10);
+    var duration = 1800; // 1.8초 동안 카운트업
+    var startTime = null;
+    
+    function step(timestamp){
+      if(!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      // easeOutQuart — 처음 빠르고 끝에서 부드럽게 멈춤
+      var eased = 1 - Math.pow(1 - progress, 4);
+      var current = Math.floor(eased * target);
+      el.textContent = current.toLocaleString();
+      
+      if(progress < 1){
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toLocaleString();
+      }
+    }
+    requestAnimationFrame(step);
+  }
+  
+  // 화면에 보일 때 한 번만 실행
+  var countObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target); // 한 번만 실행
+      }
+    });
+  }, {threshold: 0.5});
+  
+  counters.forEach(function(el){
+    countObserver.observe(el);
+  });
+})();
 
 // Hide floating CTA when inquiry section is visible (avoid redundancy)
 const inquirySection = document.getElementById('inquiry');
