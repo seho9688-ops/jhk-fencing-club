@@ -1243,6 +1243,87 @@ section{padding:96px 24px;position:relative}
   0%,100%{box-shadow:0 0 0 6px rgba(201,169,97,0.2),0 0 0 12px rgba(201,169,97,0.1)}
   50%{box-shadow:0 0 0 10px rgba(201,169,97,0.15),0 0 0 20px rgba(201,169,97,0.05)}
 }
+  /* ===== LOCATION REDESIGN ===== */
+.loc-section{
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;letter-spacing:0.4em;
+  color:var(--gold);margin:24px 0 12px;
+  display:flex;align-items:center;gap:10px;
+  text-align:left;
+}
+.loc-section::after{
+  content:'';flex:1;height:1px;background:var(--line);
+}
+.loc-info-card{
+  background:var(--bg-card);border:1px solid var(--line);
+  border-radius:6px;padding:14px 16px;margin-bottom:8px;
+  text-align:left;
+}
+.loc-info-row{
+  display:flex;padding:8px 0;font-size:13px;gap:12px;
+  border-bottom:1px dashed var(--line);
+}
+.loc-info-row:last-child{border-bottom:none}
+.loc-info-key{
+  font-family:var(--serif);font-style:italic;
+  font-size:10px;color:var(--gold);letter-spacing:0.3em;
+  flex-shrink:0;min-width:64px;padding-top:3px;
+}
+.loc-info-val{
+  font-family:var(--kr);color:var(--text);
+  flex:1;line-height:1.6;font-size:13px;
+}
+.loc-info-val .gold{color:var(--gold)}
+.loc-info-val .dim{color:var(--text-dim);font-size:11px;display:block;margin-top:2px}
+.loc-nav-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:8px;margin-bottom:8px;
+}
+.loc-nav-btn{
+  padding:14px 10px;
+  border-radius:6px;text-align:center;
+  text-decoration:none;display:block;
+  transition:transform 0.2s ease;
+  border:1px solid transparent;
+}
+.loc-nav-btn:active{transform:scale(0.97)}
+.loc-nav-btn.kakao{background:#FEE500;color:#191919;border-color:#FEE500}
+.loc-nav-btn.naver{background:#03C75A;color:#fff;border-color:#03C75A}
+.loc-nav-label{
+  font-family:var(--serif);font-style:italic;
+  font-size:10px;letter-spacing:0.25em;
+  opacity:0.75;margin-bottom:3px;
+}
+.loc-nav-name{
+  font-family:var(--kr);font-size:13px;
+  font-weight:500;letter-spacing:0.05em;
+}
+.loc-call{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 18px;
+  background:linear-gradient(135deg,rgba(201,169,97,0.1),rgba(201,169,97,0.04));
+  border:1px solid var(--gold);border-radius:6px;
+  margin-bottom:8px;text-decoration:none;
+  transition:transform 0.2s ease;
+}
+.loc-call:active{transform:scale(0.98)}
+.loc-call-icon{
+  width:38px;height:38px;flex-shrink:0;
+  background:var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--bg);font-size:18px;
+}
+.loc-call-text{flex:1}
+.loc-call-label{
+  font-family:var(--serif);font-style:italic;
+  font-size:10px;color:var(--gold);
+  letter-spacing:0.3em;margin-bottom:2px;
+}
+.loc-call-num{
+  font-family:var(--kr);font-size:18px;
+  color:#fff;font-weight:500;
+  letter-spacing:0.05em;
+}
 
 /* ============ SOCIAL ============ */
 .social{
@@ -1871,17 +1952,57 @@ section{padding:96px 24px;position:relative}
   <h2 class="section-title fade-in"><span class="it">Location</span></h2>
   <div class="section-kr fade-in">오 시 는 길</div>
 
-  <div class="location-info fade-in">
-    <strong>광주광역시 광산구 장신로60, 2층</strong><br>
-    JHK FENCING CLUB<br>
-    <strong>OPEN</strong> 평일 15:00 — 21:30<br>
-    토,일요일 10:00 — 20:00 / 월요일 휴무
-  </div>
-  <div class="location-map fade-in">
-    <div class="location-pin">
-      JHK FENCING<br>
-      <span style="font-size:10px;color:var(--text-dim);letter-spacing:0.2em">광 주 · 광 산 구</span>
+  <div style="max-width:560px;margin:0 auto">
+
+    <div class="loc-section fade-in">— Map · 지도 / 길찾기</div>
+    <div class="loc-nav-grid fade-in">
+      <a href="https://kko.to/LOC2lAk_cc" target="_blank" class="loc-nav-btn kakao" aria-label="카카오맵에서 보기">
+        <div class="loc-nav-label">KAKAO MAP</div>
+        <div class="loc-nav-name">카카오맵 길찾기</div>
+      </a>
+      <a href="https://map.naver.com/v5/search/광주광역시%20광산구%20장신로%2060%20태인빌딩" target="_blank" class="loc-nav-btn naver" aria-label="네이버지도에서 보기">
+        <div class="loc-nav-label">NAVER MAP</div>
+        <div class="loc-nav-name">네이버 길찾기</div>
+      </a>
     </div>
+
+    <div class="loc-section fade-in">— Address · 주소 정보</div>
+    <div class="loc-info-card fade-in">
+      <div class="loc-info-row">
+        <span class="loc-info-key">ADDRESS</span>
+        <span class="loc-info-val">광주광역시 광산구 장신로 60<br>2층 <span class="dim">(우) 62225</span></span>
+      </div>
+      <div class="loc-info-row">
+        <span class="loc-info-key">PARKING</span>
+        <span class="loc-info-val">건물 내 전용 주차장 이용 가능</span>
+      </div>
+    </div>
+
+    <div class="loc-section fade-in">— Hours · 운영 시간</div>
+    <div class="loc-info-card fade-in">
+      <div class="loc-info-row">
+        <span class="loc-info-key">평일</span>
+        <span class="loc-info-val">15:00 — 21:30</span>
+      </div>
+      <div class="loc-info-row">
+        <span class="loc-info-key">주말</span>
+        <span class="loc-info-val">10:00 — 20:00</span>
+      </div>
+      <div class="loc-info-row">
+        <span class="loc-info-key">휴무</span>
+        <span class="loc-info-val gold">월요일</span>
+      </div>
+    </div>
+
+    <div class="loc-section fade-in">— Contact · 직접 문의</div>
+    <a href="tel:062-951-1213" class="loc-call fade-in">
+      <div class="loc-call-icon">☎</div>
+      <div class="loc-call-text">
+        <div class="loc-call-label">CALL</div>
+        <div class="loc-call-num">010-9058-1037</div>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -1890,7 +2011,7 @@ section{padding:96px 24px;position:relative}
   <div class="divider"></div>
   <div class="social-tag">— Follow our journey —</div>
   <div class="social-grid">
-    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+   <a href="https://www.instagram.com/jhk_fencing_club/" target="_blank" class="social-link" aria-label="Instagram">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <rect x="2" y="2" width="20" height="20" rx="5"/>
         <circle cx="12" cy="12" r="4"/>
@@ -1921,7 +2042,7 @@ section{padding:96px 24px;position:relative}
     광주광역시 광산구 장신로60, 2층<br>
     JHK FENCING CLUB · TEAM J1<br>
     Head Coach · 장 현 경<br>
-    문의 · KakaoTalk / NaverTalkTalk / 010-9058-1037
+   문의 · 010-9058-1037 / KakaoTalk / NaverTalkTalk
   </div>
   <div class="footer-line"></div>
   <div class="footer-copy">© 2026 JHK FENCING CLUB · Honor &amp; Discipline</div>
